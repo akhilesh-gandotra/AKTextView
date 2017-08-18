@@ -23,12 +23,11 @@ class AKTextView: UITextView {
         }
     }
      var placeholderFont: UIFont!
-    
     override func awakeFromNib() {
        initializePlaceholder()
     }
     
-    //MARK: For initializing textView
+    // MARK: For initializing textView
     private func initializePlaceholder() {
         
         let lineFragmentPadding = self.textContainer.lineFragmentPadding
@@ -53,11 +52,12 @@ class AKTextView: UITextView {
         self.placeholderLabel.font = self.font
         self.layoutIfNeeded()
     }
+    
 }
 
 extension AKTextView : UITextViewDelegate {
     
-    //MARK: For checking the charcaters on the textView
+    // MARK: For checking the charcaters on the textView
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
@@ -69,4 +69,5 @@ extension AKTextView : UITextViewDelegate {
         }
         return true
     }
+    
 }
